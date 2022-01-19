@@ -1,10 +1,9 @@
-
-
 #include <iostream>
 #include <fstream>
 #include <ostream>
 #include <cmath>
 #include "Vertex.h"
+#include <vector>
 
 #define PI 3.1415926535897932384626433832795028841971693993751058209749445923078164062
 
@@ -21,7 +20,7 @@ public:
 
     //! Overloaded ostream operator which reads all vertex data from an open textfile stream
     friend std::istream& operator>> (std::istream& is, Vertex&);
-
+    float integral(float func(float x, float y),float x1, float x2, float y1, float y2, float step);
 private:
     int mLinjer{ 0 };
 
@@ -86,19 +85,31 @@ void funk2variable::Write(float func(float x, float y))
     MyFile.close();
 }
 
+float funk2variable::integral(float func(float x, float y),float x1, float x2, float y1, float y2, float step)
+{
+    float volume{ 0 };
+
+    for (float x = x1; x < x2; x += step)
+	    for (float y = y1; y <= y2; y += step)
+            volume += func(x, y) * step * step;
+
+    return volume;
+}
+
 float basicfunc(float x, float y)
 {
-    return sin(x+PI)*sin(y+PI);
+    return y*pow(x,2);
+	//return sin(x+PI)*sin(y+PI);
 }
 
 int main()
 {
     funk2variable ftest;
 
+    //ftest.Write(basicfunc);
 
-    ftest.Write(basicfunc);
+    std::cout << "step = 1 Area = " << ftest.integral(basicfunc, 0, 10, 0, 10, 1);
+    std::cout << "\nstep = 0.5 Area = " << ftest.integral(basicfunc, 0, 10, 0, 10, 0.5f);
+    std::cout << "\nstep = 0.01 Area = " << ftest.integral(basicfunc, 0, 10, 0, 10, 0.01f);
 
-	std::cout << "Hello World!\n";
 }
-
-

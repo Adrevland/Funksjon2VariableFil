@@ -18,18 +18,18 @@
     <ClCompile Include="Funksjon2VariableFil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Documents\3DProg\3Dprog22\Vertex.cpp">
+    <ClCompile Include="Vector3d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vector3d.cpp">
+    <ClCompile Include="Vertex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\OneDrive\Documents\3DProg\3Dprog22\Vertex.h">
+    <ClInclude Include="Vector3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vector3d.h">
+    <ClInclude Include="Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -28,7 +28,7 @@ public:
     float magnitude()const;
     float square()const;
     float distance(const Vector3d &vec) const;
-    Vector3d& Normalize() ;
+    Vector3d& Normalize();
     float dot_product(const Vector3d& vec)const;
     Vector3d cross_product(const Vector3d& vec)const;
 
