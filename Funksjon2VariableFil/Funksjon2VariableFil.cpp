@@ -3,7 +3,7 @@
 #include <ostream>
 #include <cmath>
 #include "Vertex.h"
-#include <vector>
+
 
 #define PI 3.1415926535897932384626433832795028841971693993751058209749445923078164062
 
@@ -99,17 +99,16 @@ float funk2variable::integral(float func(float x, float y),float x1, float x2, f
 float basicfunc(float x, float y)
 {
     return y*pow(x,2);
-	//return sin(x+PI)*sin(y+PI);
 }
 
 int main()
 {
     funk2variable ftest;
 
-    //ftest.Write(basicfunc);
+    ftest.Write(basicfunc);
 
-    std::cout << "step = 1 Area = " << ftest.integral(basicfunc, 0, 10, 0, 10, 1);
-    std::cout << "\nstep = 0.5 Area = " << ftest.integral(basicfunc, 0, 10, 0, 10, 0.5f);
-    std::cout << "\nstep = 0.01 Area = " << ftest.integral(basicfunc, 0, 10, 0, 10, 0.01f);
+    std::cout << "step = 1 Volume = " << ftest.integral(basicfunc, 0, 10, 0, 10, 1);
+    std::cout << "\nstep = 0.5 Volume = " << ftest.integral(basicfunc, 0, 10, 0, 10, 0.5f);
+    std::cout << "\nstep = 0.01 Volume = " << ftest.integral(basicfunc, 0, 10, 0, 10, 0.01f);
 
 }
